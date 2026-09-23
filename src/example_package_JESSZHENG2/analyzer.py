@@ -4,7 +4,7 @@ import json
 from collections import Counter
 from pathlib import Path
 from typing import Any
-from models import FileBasic, WordAnalysis, FileAnalysis
+from .models import FileBasic, WordAnalysis, FileAnalysis
 
 #获得该文件的基础信息（字符数，行数）
 def get_file_basic(file: Path) ->  FileBasic:
