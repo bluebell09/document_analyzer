@@ -5,17 +5,7 @@
 * **特性 1**：极速分词，集成 `jieba` 并在关键词分析中去除了stop words。
 * **特性 2**：利用chunk，大文档读取无困难。
 
-## 📦 安装指南 (Installation)
-推荐使用现代 Python 工具链 `uv` 进行快速安装：
-```bash
-uv pip install example_package_jesszheng2
-```
-或者使用传统的 `pip`：
-```bash
-pip install example_package_jesszheng2
-```
-
-## 📦 调用指南 ()
+## 📦 调用指南 (Usage guide)
 安装完成后，直接在电脑的终端（Terminal）中输入以下命令即可启动交互：
 ```bash
 run-analyzer

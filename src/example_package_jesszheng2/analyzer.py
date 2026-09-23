@@ -5,6 +5,7 @@ from collections import Counter
 from pathlib import Path
 from typing import Any
 from .models import FileBasic, WordAnalysis, FileAnalysis
+from importlib import resources
 
 #获得该文件的基础信息（字符数，行数）
 def get_file_basic(file: Path) ->  FileBasic:
@@ -34,8 +35,8 @@ def get_file_word_analyze(file: Path, top_num= None) -> WordAnalysis:
     word_count = 0
     cleanword_lib ={}
     if top_num is not None:
-        with open("/Users/jess/Desktop/python/stop_words.json",encoding="utf-8-sig",errors="ignore") as j:
-            stopwords = json.load(j)
+        json_text = resources.files("example_package_jesszheng2").joinpath("stop_words.json").read_text(encoding="utf-8-sig", errors="ignore")
+        stopwords = json.loads(json_text)
     file_name = file.name #Path可以直接通过.name得到文件名
     with open(file, encoding="utf_8-sig",errors="ignore") as f:
         #按照chunk size分段导入，防止文件过大，同时处理段末的词，使之不被切割成两份
